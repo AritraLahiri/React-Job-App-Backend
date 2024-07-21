@@ -18,7 +18,6 @@ app.get("/api/jobs", (req, res) => {
 //GET USER BY ID
 app.get("/api/job/:id", (req, res) => {
   const id = req.params.id;
-  console.log(jobs);
   return res.json(jobs.find((job) => job.id === id));
 });
 
