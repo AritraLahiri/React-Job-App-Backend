@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 const cors = require("cors");
 const fs = require("fs");
@@ -8,6 +9,7 @@ const port = 8000;
 
 //MIDDLEWARE
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cors());
 
 //GET ALL JOBS
@@ -26,7 +28,8 @@ app.post("/api/job", (req, res) => {
   try {
     const body = req.body;
     const lastId = Number(jobs[jobs.length - 1].id);
-    jobs.push({ ...body, id: lastId + 1 });
+    console.log(body);
+    jobs.push({ ...body, id: String(lastId + 1) });
     fs.writeFile("./MOCK_DATA.json", JSON.stringify(jobs), (err, data) => {
       return res.json({ id: lastId, isCreated: true });
     });

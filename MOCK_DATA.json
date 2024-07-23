@@ -10,7 +10,7 @@
       "name": "NewTek Solutions",
       "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
       "contactEmail": "contact@teksolutions.com",
-      "contactPhone": "555-555-5555"
+      " ": "555-555-5555"
     }
   },
   {
@@ -82,5 +82,33 @@
       "contactEmail": "contact@ipsumlorem.com",
       "contactPhone": "555-555-5555"
     }
+  },
+  {
+    "title": "bgbgbg",
+    "type": "Part-Time",
+    "description": "bgbggb",
+    "location": "bgbgbg",
+    "salary": "Under $50K",
+    "company": {
+      "name": "bgbgbg",
+      "description": "bgbgbg",
+      "contactEmail": "bgbgbgbg",
+      "contactPhone": "14141414"
+    },
+    "id": "7"
+  },
+  {
+    "title": ".NET DEVLOPER",
+    "type": "Remote",
+    "description": "AWESOME JOB AVAILBABLE COME JOIN US NOW",
+    "location": "INDIA",
+    "salary": "$125K - 150K",
+    "company": {
+      "name": "PWC",
+      "description": "An Awesome Company",
+      "contactEmail": "aritralahiri17@gmail.com",
+      "contactPhone": "9875381874"
+    },
+    "id": "8"
   }
 ]
