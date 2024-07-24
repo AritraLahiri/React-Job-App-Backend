@@ -44,7 +44,7 @@ app.patch("/api/job/:id", (req, res) => {
     const body = req.body;
     const id = req.params.id;
     const index = jobs.indexOf(jobs.find((job) => job.id === id));
-    job[index] = { ...body, id };
+    jobs[index] = { ...body, id };
     fs.writeFile("./MOCK_DATA.json", JSON.stringify(jobs), (err, data) => {
       return res.json({ id, isUpdated: true });
     });
