@@ -5,7 +5,8 @@ const app = express();
 const cors = require("cors");
 const fs = require("fs");
 const jobs = require("./MOCK_DATA.json");
-const port = 8000;
+require("dotenv").config();
+const port = process.env.PORT;
 
 //MIDDLEWARE
 app.use(express.urlencoded({ extended: false }));
