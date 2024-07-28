@@ -13,6 +13,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
 //GET ALL JOBS
 app.get("/api/jobs", (req, res) => {
   return res.json(jobs);
