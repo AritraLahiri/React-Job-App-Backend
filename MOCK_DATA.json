@@ -10,7 +10,7 @@
       "name": "NewTek Solutions",
       "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
       "contactEmail": "contact@teksolutions.com",
-      " ": "555-555-5555"
+      "contactPhone": "555-555-5555"
     }
   },
   {
@@ -96,5 +96,53 @@
       "contactEmail": "xyz17@gmail.com",
       "contactPhone": "9875381874"
     }
+  },
+  {
+    "title": "Senior React Developer",
+    "type": "Full-Time",
+    "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
+    "location": "Boston, MA",
+    "salary": "$70K - 80K",
+    "companyName": "NewTek Solutions",
+    "companyDescription": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
+    "contactEmail": "contact@teksolutions.com",
+    "contactPhone": "555-555-5555",
+    "id": "8"
+  },
+  {
+    "title": " \"Senior React Developer\"",
+    "type": " \"Full-Time\"",
+    "description": " \"We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.\"",
+    "location": " \"Boston, MA\"",
+    "salary": " \"$70K - $80K\"",
+    "companyName": " \"NewTek Solutions\"",
+    "companyDescription": " \"NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.\"",
+    "contactEmail": " \"contact@teksolutions.com\"",
+    "contactPhone": " \"555-555-5555\"",
+    "id": "9"
+  },
+  {
+    "title": " Senior React Developer",
+    "type": " Full-Time",
+    "description": " We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
+    "location": " Boston, MA",
+    "salary": "$70K - $80K",
+    "companyName": " NewTek Solutions",
+    "companyDescription": " NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
+    "contactEmail": " contact@teksolutions.com",
+    "contactPhone": " 555-555-5555",
+    "id": "10"
+  },
+  {
+    "title": "NODE JS DEVELOPER HIRING RAPIDLY",
+    "type": "Remote",
+    "description": "Join our team as a Front-End Developer in sunny Miami, FL. We are looking for a motivated individual with a passion for crafting beautiful and responsive web applications. Experience with UI/UX design principles and a strong attention to detail are highly desirable.",
+    "location": "Bangalore",
+    "salary": "$90K - 100K",
+    "companyName": "LTI",
+    "companyDescription": "Join our team as a Front-End Developer in sunny Miami, FL. We are looking for a motivated individual with a passion for crafting beautiful and responsive web applications. Experience with UI/UX design principles and a strong attention to detail are highly desirable.",
+    "contactEmail": "xyz17@gmail.com",
+    "contactPhone": "9875381874",
+    "id": "11"
   }
 ]

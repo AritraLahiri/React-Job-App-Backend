@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
 const express = require("express");
 const bodyParser = require("body-parser");
+const sequelize = require("./util/database");
 const app = express();
 const cors = require("cors");
-const fs = require("fs");
-const jobs = require("./MOCK_DATA.json");
+const Job = require("./models/Job");
 require("dotenv").config();
 const port = process.env.PORT;
 
@@ -17,25 +17,41 @@ app.get("/", (req, res) => res.send("Welcome to JOB APIs !!!"));
 
 //GET ALL JOBS
 app.get("/api/jobs", (req, res) => {
-  return res.json(jobs);
+  Job.findAll({})
+    .then((data) => {
+      if (!data) {
+        console.log(data);
+        return;
+      }
+      return res.json(data);
+    })
+    .catch((e) => console.log(e));
 });
 
 //GET USER BY ID
 app.get("/api/job/:id", (req, res) => {
   const id = req.params.id;
-  return res.json(jobs.find((job) => job.id === id));
+  Job.findAll({
+    where: {
+      id,
+    },
+  })
+    .then((data) => {
+      if (!data) {
+        console.log(data);
+        return;
+      }
+      return res.json(data);
+    })
+    .catch((e) => console.log(e));
 });
 
 //POST CREATE A JOB
 app.post("/api/job", (req, res) => {
   try {
     const body = req.body;
-    const lastId = Number(jobs[jobs.length - 1].id);
-    console.log(body);
-    jobs.push({ ...body, id: String(lastId + 1) });
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(jobs), (err, data) => {
-      return res.json({ id: lastId, isCreated: true });
-    });
+    Job.create({ ...body });
+    return res.json({ isCreated: true });
   } catch (e) {
     res.status(404).json({ error: "SOMETHING WENT WRONG" });
   }
@@ -46,11 +62,22 @@ app.patch("/api/job/:id", (req, res) => {
   try {
     const body = req.body;
     const id = req.params.id;
-    const index = jobs.indexOf(jobs.find((job) => job.id === id));
-    jobs[index] = { ...body, id };
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(jobs), (err, data) => {
-      return res.json({ id, isUpdated: true });
-    });
+    Job.update(
+      { ...body },
+      {
+        where: {
+          id,
+        },
+      }
+    )
+      .then((data) => {
+        if (!data) {
+          console.log(data);
+          return;
+        }
+        return res.json({ id, isUpdated: true });
+      })
+      .catch((e) => console.log(e));
   } catch (e) {
     res.status(404).json({ error: "SOMETHING WENT WRONG" });
   }
@@ -60,14 +87,28 @@ app.patch("/api/job/:id", (req, res) => {
 app.delete("/api/job/:id", (req, res) => {
   try {
     const id = Number(req.params.id);
-    const deleteIndex = jobs.indexOf(jobs.find((job) => job.id === id));
-    jobs.splice(deleteIndex, 1);
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(jobs), (err, data) => {
-      return res.json({ isDeleted: true });
-    });
+    Job.destroy({
+      where: {
+        id,
+      },
+    })
+      .then((data) => {
+        if (!data) {
+          console.log(data);
+          return;
+        }
+        return res.json({ isDeleted: true });
+      })
+      .catch((e) => console.log(e));
   } catch (e) {
     res.status(404).json({ error: "SOMETHING WENT WRONG" });
   }
 });
 
+sequelize
+  .sync()
+  .then((res) => {
+    console.log(`MYSQL Server up and running`);
+  })
+  .catch((err) => console.log(err));
 app.listen(port, () => console.log(`Server listening on port ${port}`));
